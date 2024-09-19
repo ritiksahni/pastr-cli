@@ -47,6 +47,7 @@ func main() {
 				},
 			},
 		},
+		DefaultCommand: "create",
 	}
 
 	if err := app.Run(os.Args); err != nil {
