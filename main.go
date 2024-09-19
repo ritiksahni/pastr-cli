@@ -58,7 +58,7 @@ func get(ctx *cli.Context) error {
 	key := ctx.String("key")
 	outFile := ctx.String("out")
 
-	url := "http://localhost:8787/get/" + url.QueryEscape(key)
+	url := "http://pastr.ritiksahni0203.workers.dev/get/" + url.QueryEscape(key)
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
@@ -97,7 +97,7 @@ func get(ctx *cli.Context) error {
 }
 
 func create(ctx *cli.Context) error {
-	url := "http://127.0.0.1:8787/create"
+	url := "http://pastr.ritiksahni0203.workers.dev/create"
 
 	var data []byte
 	var err error
