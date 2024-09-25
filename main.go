@@ -42,6 +42,7 @@ func main() {
 				Flags: []cli.Flag{
 					&cli.StringFlag{
 						Name:     "file",
+						Aliases: []string{"f"},
 						Usage:    "The file to upload.",
 					},
 				},
@@ -103,8 +104,8 @@ func create(ctx *cli.Context) error {
 	var data []byte
 	var err error
 
-	if ctx.String("create") != "" {
-		filePath := ctx.String("create")
+	if ctx.String("file") != "" {
+		filePath := ctx.String("file")
 		data, err = os.ReadFile(filePath)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
